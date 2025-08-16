@@ -1,6 +1,11 @@
+import sys
 from stats import num_words
 from stats import num_chars
 from stats import split_dicts
+
+if len(sys.argv) != 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
 
 
 def get_book_text(book):
@@ -9,12 +14,11 @@ def get_book_text(book):
         return file_contents     
 
 def main():
-    book = "books/frankenstein.txt"
+    book = sys.argv[1]
     text = (get_book_text(book))
     word_count = num_words(text)
     dic = num_chars(text)
     input = split_dicts(dic)
-    #output = 
 
     print(f"""============ BOOKBOT ============")
 "Analyzing book found at {book}...
