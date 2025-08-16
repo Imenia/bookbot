@@ -1,4 +1,5 @@
 from stats import num_words
+from stats import num_chars
 
 def get_book_text(book):
         with open(book) as f:
@@ -9,5 +10,6 @@ def main():
     book = "/home/test/bootdev_projects/bookbot/books/frankenstein.txt"
     text = (get_book_text(book))
     num_words(text)
+    num_chars(text)
 
 main()
